@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# react-hooks-demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository is just for demonstrate the usage of each react hook.
 
 ## Available Scripts
 

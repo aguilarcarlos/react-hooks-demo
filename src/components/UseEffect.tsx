@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, FC } from "react";
 import axios, {AxiosResponse} from 'axios';
 
 type Post = {
@@ -8,7 +8,7 @@ type Post = {
   body: string;
 }
 
-export default function UseEffect() {
+const UseEffect: FC = () => {
   const [ count, setCount ] = useState<number>(1);
   const [ postBody, setPostBody ] = useState<string>('');
   const [ postTitle, setPostTitle ] = useState<string>('');
@@ -18,11 +18,22 @@ export default function UseEffect() {
   // with this usage. We can leverage of this to detect possible 
   // unnecessary re-renders that can lead into memory leaks
   useEffect(() => {
+    // code...
     console.log('Mount');
     return () => {
       console.log('Unmount');
     }
   })
+
+  // Add event listeners
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => console.log(e);
+    document.addEventListener('keydown', onKey);
+
+    return () => {
+      document.removeEventListener('keydown', onKey);
+    };
+  }, []);
   
   // This effect is for demonstrate the use of useEffect of live instances
   // during life cycle and how to clear them to prevent memory leaks
@@ -86,3 +97,5 @@ export default function UseEffect() {
     </>
   )
 }
+
+export default UseEffect;

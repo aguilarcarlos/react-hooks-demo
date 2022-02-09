@@ -5,6 +5,8 @@ import UseReducer from './components/UseReducer';
 import UseEffect from './components/UseEffect';
 import UseCallback from './components/UseCallback';
 import UseContext from './components/UseContext';
+import UseImperative from './components/UseImperative';
+import UseLayoutEffect from './components/UseLayoutEffect';
 import Counter from './components/counter';
 
 import CounterV2 from './components/counterv2';
@@ -24,7 +26,9 @@ function App() {
       <hr /> 
       <UseCallback />
       */}
+      <UseLayoutEffect />
       <CounterV2 />
+      <UseImperative />
     </div>
   );
 }
